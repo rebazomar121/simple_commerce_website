@@ -5,9 +5,9 @@ import CONTROLLERS from "./api.controllers"
 import { USER_MIDDLEWARE } from "./api.middlewares"
 
 
-router.post("/users", CONTROLLERS.register)
-router.post("/users", CONTROLLERS.login)
-router.get("/users", USER_MIDDLEWARE.authorization, CONTROLLERS.my_profile)
+router.post("/users/register", CONTROLLERS.register)
+router.post("/users/login", CONTROLLERS.login)
+router.get("/users/profile", USER_MIDDLEWARE.authorization, CONTROLLERS.my_profile)
 
 
 // TODO this route should be protected with admin authorization
