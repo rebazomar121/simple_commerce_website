@@ -104,3 +104,5 @@ src/ecosystem.config.js
 package-lock.json
 DS_Store
 ```
+
+ecosystem.config.js
