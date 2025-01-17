@@ -1,9 +1,13 @@
-import { User } from "./users.types"
+import { User } from "./api.types"
 import mongoose from "mongoose"
 import bcrypt from "bcryptjs"
 
 const Schema = new mongoose.Schema<User>(
   {
+    name: {
+      type: String,
+      required: true,
+    },
     username: {
       type: String,
       required: true,
@@ -18,31 +22,6 @@ const Schema = new mongoose.Schema<User>(
       default: true,
     },
     sessionToken: {
-      type: String,
-      required: false,
-    },
-    otp: {
-      code: {
-        type: String,
-        required: false,
-      },
-      expireAt: {
-        type: Date,
-        required: false,
-      },
-    },
-    phone: {
-      number: {
-        type: String,
-        required: false,
-        unique: true,
-      },
-      isVerified: {
-        type: Boolean,
-        default: false,
-      },
-    },
-    resetPasswordToken: {
       type: String,
       required: false,
     },

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express" // Import Request and Response types from Express
-import { USER_UTILS } from "./users.utils"
+import { USER_UTILS } from "./api.utils"
 
 /**
  * Middleware for user authorization.

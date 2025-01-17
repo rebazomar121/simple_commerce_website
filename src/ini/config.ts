@@ -3,7 +3,7 @@ import cors from "cors"
 import bodyParser from "body-parser"
 import "colors"
 require("dotenv").config()
-import router from "../api"
+import router from "../api/api.routes"
 import { CONFIG_CONST } from "./config.const"
 import connectMongoDb from "../database/mongodb/connectMongoDb"
 import swaggerUi from "swagger-ui-express"
@@ -57,10 +57,9 @@ const config = () => {
   app.use("/api", router)
   app.listen(CONFIG_CONST.CONFIG_CONST_PORT, () => {
     return console.log(
-      `${
-        CONFIG_CONST.CONFIG_CONST_LISTEN_MESSAGE +
+      `${CONFIG_CONST.CONFIG_CONST_LISTEN_MESSAGE +
         CONFIG_CONST.CONFIG_CONST_PORT
-      }`.blue,
+        }`.blue,
     )
   })
 }

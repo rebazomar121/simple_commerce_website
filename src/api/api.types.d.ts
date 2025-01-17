@@ -1,6 +1,6 @@
-import { Document, Mongoose, SchemaTimestampsConfig } from "mongoose"
+import { Document, SchemaTimestampsConfig } from "mongoose"
 
-interface MongooseDoc extends Document, SchemaTimestampsConfig {}
+interface MongooseDoc extends Document, SchemaTimestampsConfig { }
 
 type Otp = {
   code: string
@@ -14,14 +14,21 @@ type Phone = {
 
 interface User extends MongooseDoc {
   _id: Object
+  name: string
   username: string
   password: string
   isActive: boolean
   sessionToken: string
-  resetPasswordToken: string
-  phone: Phone
-  otp: Otp
   comparePassword: (password: string) => Promise<boolean>
+}
+
+
+interface Product extends MongooseDoc {
+  _id: Object
+  name: string
+  price: number
+  description: string
+  image: string
 }
 
 type GenTokenProps = {

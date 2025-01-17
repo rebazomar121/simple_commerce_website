@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs"
 import crypto from "crypto"
-import { GenTokenProps, User, Otp } from "./users.types.d"
+import { GenTokenProps, User, Otp } from "./api.types"
 import UserModal from "./users.model"
 import { uuid } from "uuidv4"
 import mongoose from "mongoose"
